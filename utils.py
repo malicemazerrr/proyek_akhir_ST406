@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 def muat_data(path):
     df = pd.read_csv(path)
@@ -18,3 +19,20 @@ def hitung_per_dekade(df):
     hasil = df.groupby('Dekade').size()
     return hasil
 
+def buat_grafik(hasil_dekade, path_output_line, path_output_bar):
+    plt.figure(figsize=(10, 6))
+    hasil_dekade.plot(kind='line', marker='o')
+    plt.title('Tren Jumlah Kelahiran Seniman per Dekade')
+    plt.xlabel('Dekade')
+    plt.ylabel('Jumlah Seniman')
+    plt.grid(True)
+    plt.savefig(path_output_line)
+    plt.close()
+
+    plt.figure(figsize=(10, 6))
+    hasil_dekade.plot(kind='bar', color='skyblue')
+    plt.title('Jumlah Kelahiran Seniman per Dekade')
+    plt.xlabel('Dekade')
+    plt.ylabel('Jumlah Seniman')
+    plt.savefig(path_output_bar)
+    plt.close()
