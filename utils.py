@@ -22,8 +22,13 @@ def hitung_per_dekade(df):
     hasil = df.groupby('Dekade').size()
     return hasil
 
+def hitung_per_negara(df, top_n=10):
+    hasil = df['Nationality'].value_counts().head(top_n)
+    return hasil
 
-def buat_grafik(hasil_dekade, path_output_line, path_output_bar):
+
+def buat_grafik(hasil_dekade, hasil_negara, path_output_line, path_output_bar):
+
     plt.figure(figsize=(10, 6))
     hasil_dekade.plot(kind='line', marker='o')
     plt.title('Tren Jumlah Kelahiran Seniman per Dekade')
@@ -34,10 +39,12 @@ def buat_grafik(hasil_dekade, path_output_line, path_output_bar):
     plt.close()
 
     plt.figure(figsize=(10, 6))
-    hasil_dekade.plot(kind='bar', color='skyblue')
-    plt.title('Jumlah Kelahiran Seniman per Dekade')
-    plt.xlabel('Dekade')
+    hasil_negara.plot(kind='bar', color='skyblue')
+    plt.title('Top 10 Negara dengan Seniman Terbanyak')
+    plt.xlabel('Kewarganegaraan')
     plt.ylabel('Jumlah Seniman')
+    plt.xticks(rotation=45)
+    plt.tight_layout()
     plt.savefig(path_output_bar)
     plt.close()
 
