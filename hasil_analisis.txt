@@ -1,0 +1,40 @@
+HASIL ANALISIS DATA SENIMAN MOMA
+========================================
+
+Total data seniman (setelah dibersihkan): 11237
+
+Jumlah seniman per dekade:
+Dekade
+1730       2
+1740       1
+1750       1
+1760       1
+1770       1
+1780       4
+1790      10
+1800      23
+1810      50
+1820      55
+1830      52
+1840      64
+1850      93
+1860     210
+1870     267
+1880     518
+1890     648
+1900     803
+1910     744
+1920    1167
+1930    1418
+1940    1535
+1950    1170
+1960    1157
+1970     877
+1980     216
+1990      72
+2000      72
+2010       6
+dtype: int64
+
+Dekade dengan kelahiran seniman terbanyak: 1940
+Jumlah seniman lahir di dekade tsb: 1535
