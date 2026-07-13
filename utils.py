@@ -49,7 +49,7 @@ def buat_grafik(hasil_dekade, hasil_negara, path_output_line, path_output_bar):
     plt.close()
 
 
-def simpan_hasil_analisis(df_bersih, hasil_dekade, path_output):
+def simpan_hasil_analisis(df_bersih, hasil_dekade, hasil_negara, path_output):
     dekade_puncak = hasil_dekade.idxmax()
     jumlah_puncak = hasil_dekade.max()
 
@@ -61,3 +61,5 @@ def simpan_hasil_analisis(df_bersih, hasil_dekade, path_output):
         f.write(str(hasil_dekade))
         f.write(f"\n\nDekade dengan kelahiran seniman terbanyak: {dekade_puncak}")
         f.write(f"\nJumlah seniman lahir di dekade tsb: {jumlah_puncak}")
+        f.write("\n\nTop 10 Kewarganegaraan Seniman:\n")
+        f.write(str(hasil_negara))

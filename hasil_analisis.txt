@@ -38,3 +38,17 @@ dtype: int64
 
 Dekade dengan kelahiran seniman terbanyak: 1940
 Jumlah seniman lahir di dekade tsb: 1535
+
+Top 10 Kewarganegaraan Seniman:
+Nationality
+American    4691
+German       811
+French       741
+British      718
+Italian      459
+Japanese     405
+Unknown      286
+Swiss        244
+Dutch        232
+Austrian     226
+Name: count, dtype: int64
